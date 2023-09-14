@@ -27,36 +27,43 @@ function App() {
           <button onClick={handleAddTodo}>ADD</button>
         </div>
       </div>
-      
+      <nav><h1>My ToDo</h1><select id="taskFilter">
+        <option value="all">All</option>
+        <option value="notCompleted">Not Completed</option>
+        <option value="completed">Completed</option>
+    </select></nav>
+      <div className='card'>
       {todos.map((todo, index) => (
         <AddToDo key={index} name={todo.name} description={todo.description} />
       ))}
+      </div>
     </div>
+      
   );
 
   function AddToDo({ name, description }) {
     const [status, setStatus] = useState("Not completed");
-    const toggleStatus = () => {
-      setStatus(status === "Not completed" ? "Completed" : "Not completed");
-    };
-  
+
+  const toggleStatus = () => {
+    setStatus(status === "Not completed" ? "Completed" : "Not completed");
+  };
     return (
-      <div className='card'>
         <div className="card-content">
+        <div className='Texts'>
           <div>Name: {name}</div>
           <div>Description: {description}</div>
           <lable>Status: </lable>
           <button
-        type="button"
-        className={`btn ${status === "Not completed" ? "btn-success" : "btn-danger"}`}
-        onClick={toggleStatus}
-      >
-        {status === "Not completed" ? "Completed" : "Not Completed"}
-      </button>
+          type="button"
+          className={`btn ${status === "Not completed" ? "btn-danger" : "btn-success"}`}
+          onClick={toggleStatus}
+        >
+          {status}
+        </button>
+        </div>
       <div className='funBtn'>
           <button type="button" class="btn btn-success">Edit</button>
           <button type="button" class="btn btn-danger">Delete</button>
-      </div>
       </div>
       </div>
     );

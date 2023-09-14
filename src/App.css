@@ -17,14 +17,29 @@
     margin-top: 0px;
   }
   .card {
+    display: inline;
     justify-content: center;
-    align-items: center
+    align-items: center;
    }
   .card-content{
-    
-    text-align: center;
-    height: 150px;
     width: 400px;
     background-color: rgb(185, 225, 185);
     margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  .Texts{
+    margin-top: 11px;
+    margin-left: 20px;
+  }
+  .funBtn{
+    margin-top: 5px;
+    margin-left: 250px;
+  }
+  .funBtn button {
+    margin-left: 8px;
+  }
+  #taskFilter{
+    text-align: center;
+    margin-left:85%
   }
